@@ -5,27 +5,14 @@
     Layout = "~/Views/Layout.cshtml";
 }
 
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $(":submit").click(function () {
-            // $("textarea").val(encode($("textarea").val()));
-        });
-
-        $("textarea").click(function () {
-        })
-    });
-</script>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         @Html.TextAreaFor(model => model.Content, 20, 100, new object())
-        @Html.ValidationMessageFor(model => model.Content)
-
         <br />
-
         <input type="submit" value="Create" />
     </fieldset>
 }

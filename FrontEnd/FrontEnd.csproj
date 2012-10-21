@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\default.css" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\highlight.pack.js" />
     <Content Include="Global.asax" />
