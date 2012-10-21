@@ -8,14 +8,14 @@
 <h2>Detail</h2>
 
 <fieldset>
-    <legend>Pastie</legend>
+    <legend># @Model.Id</legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Content)
     </div>
-    <div class="display-field">
+    <pre>
         @Html.DisplayFor(model => model.Content)
-    </div>
+    </pre>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Creation)
