@@ -64,8 +64,10 @@ namespace FrontEnd.Controllers
                 pastie.RefreshId();
             }
 
+            pastie.Creation = DateTime.UtcNow;
+
             this.DocumentSession.Store(pastie);
-            return View("Details", pastie);
+            return RedirectToAction("Details", "Pastie", new { Id = pastie.Id }); 
         }
 
         //
