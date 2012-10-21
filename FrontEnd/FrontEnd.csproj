@@ -122,8 +122,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Patch.cs" />
+    <Compile Include="Logic\Pastie.cs" />
     <Compile Include="Logic\Storage.cs" />
+    <Compile Include="Models\Pasties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +145,6 @@
     <Folder Include="App_Data\Database\" />
     <Folder Include="Content\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
