@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using FrontEnd.Models;
 using Raven.Client;
 using FrontEnd.Warehouse;
+using System.Text;
 
 namespace FrontEnd.Controllers
 {
@@ -58,13 +59,26 @@ namespace FrontEnd.Controllers
         [HttpPost]
         public ActionResult Create(Pastie pastie)
         {
-            return View();
+            Guid token;
+
+            do
+            {
+                token = Guid.NewGuid();
+                pastie.Id = Convert.ToBase64String(token.ToByteArray())
+                    .ToLower()
+                    .Replace("=","")
+                    .Replace("+", "").Remove(5);
+
+            } while (this.DocumentSession.Load<Pastie>(pastie.Id) != null);
+
+            this.DocumentSession.Store(pastie);
+            return RedirectToAction("Details", "Pastie", pastie.Id);
         }
 
         //
         // GET: /Pastie/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
             return View();
         }
