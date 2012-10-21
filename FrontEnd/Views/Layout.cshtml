@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet">
+</head>
+<body>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Sports Portal</a>
+            <ul class="nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                <li>@ViewBag.test</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>
