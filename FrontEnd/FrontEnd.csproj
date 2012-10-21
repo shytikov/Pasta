@@ -122,9 +122,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Pastie.cs" />
-    <Compile Include="Logic\Storage.cs" />
     <Compile Include="Models\Pasties.cs" />
+    <Compile Include="Raven\Storage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
