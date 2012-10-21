@@ -126,6 +126,7 @@
     <Compile Include="Models\Pastie.cs" />
     <Compile Include="Warehouse\Storage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Warehouse\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
