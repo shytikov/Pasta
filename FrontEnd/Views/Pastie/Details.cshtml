@@ -5,14 +5,11 @@
     Layout = "~/Views/Layout.cshtml";
 }
 
-<h2>Detail</h2>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+<h2>@Model.Id</h2>
 
 <fieldset>
-    <legend># @Model.Id</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Content)
-    </div>
     <pre><code>@Html.DisplayFor(model => model.Content)</code></pre>
 
     <div class="display-label">
@@ -29,7 +26,3 @@
         @Html.DisplayFor(model => model.Expiration)
     </div>
 </fieldset>
-<p>
-    @Html.ActionLink("View", "Details", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
