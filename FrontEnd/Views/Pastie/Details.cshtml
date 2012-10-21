@@ -1,0 +1,37 @@
+﻿@model FrontEnd.Models.Pastie
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<fieldset>
+    <legend>Pastie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Creation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Creation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Expiration)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Expiration)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("View", "Details", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

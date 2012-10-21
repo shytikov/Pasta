@@ -44,7 +44,9 @@ namespace FrontEnd.Models
             return Convert.ToBase64String(Guid.NewGuid().ToByteArray())
                 .ToLower()
                 .Replace("=", "")
-                .Replace("+", "").Remove(5);
+                .Replace("+", "")
+                .Replace("/", "")
+                .Remove(5);
         }
     }
 }

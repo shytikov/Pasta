@@ -65,7 +65,7 @@ namespace FrontEnd.Controllers
             }
 
             this.DocumentSession.Store(pastie);
-            return View();
+            return View("Details", pastie);
         }
 
         //
@@ -73,7 +73,8 @@ namespace FrontEnd.Controllers
 
         public ActionResult Details(string id)
         {
-            return View();
+            var pastie = this.DocumentSession.Load<Pastie>(id);
+            return View(pastie);
         }
     }
 }
