@@ -59,17 +59,10 @@ namespace FrontEnd.Controllers
         [HttpPost]
         public ActionResult Create(Pastie pastie)
         {
-            Guid token;
-
-            do
+            while (this.DocumentSession.Load<Pastie>(pastie.Id) != null) 
             {
-                token = Guid.NewGuid();
-                pastie.Id = Convert.ToBase64String(token.ToByteArray())
-                    .ToLower()
-                    .Replace("=","")
-                    .Replace("+", "").Remove(5);
-
-            } while (this.DocumentSession.Load<Pastie>(pastie.Id) != null);
+                pastie.RefreshId();
+            }
 
             this.DocumentSession.Store(pastie);
             return RedirectToAction("Details", "Pastie", pastie.Id);
