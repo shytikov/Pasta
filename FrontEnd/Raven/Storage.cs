@@ -5,7 +5,7 @@ using System.Web;
 using Raven.Client;
 using Raven.Client.Embedded;
 
-namespace FrontEnd.Logic
+namespace FrontEnd.Raven
 {
     public class Storage
     {

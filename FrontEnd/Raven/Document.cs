@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FrontEnd.Logic
+namespace FrontEnd.Raven
 {
-    public class Pastie
+    public class Document
     {
         public string Id { get; set; }
         public string Content { get; set; }
