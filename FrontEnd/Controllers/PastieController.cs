@@ -65,7 +65,7 @@ namespace FrontEnd.Controllers
             }
 
             this.DocumentSession.Store(pastie);
-            return RedirectToAction("Details", "Pastie", pastie.Id);
+            return View();
         }
 
         //

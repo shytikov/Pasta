@@ -1,7 +1,7 @@
 ﻿@model FrontEnd.Models.Pastie
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cook new pasta!";
     Layout = "~/Views/Layout.cshtml";
 }
 
@@ -9,18 +9,11 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Pastie</legend>
+        @Html.TextAreaFor(model => model.Content, 20, 100, new object())
+        @Html.ValidationMessageFor(model => model.Content)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Content)
-        </div>
-        <div class="editor-field">
-            @Html.TextAreaFor(model => model.Content, 20, 100, new object())
-            @Html.ValidationMessageFor(model => model.Content)
-        </div>
+        <br />
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
+        <input type="submit" value="Create" />
     </fieldset>
 }
