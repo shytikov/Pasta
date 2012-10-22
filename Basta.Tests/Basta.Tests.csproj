@@ -108,7 +108,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FrontEnd\Basta.csproj">
+    <ProjectReference Include="..\Basta\Basta.csproj">
       <Project>{2AD4F5EB-928C-4873-96D6-B7D718EB9CF3}</Project>
       <Name>Basta</Name>
     </ProjectReference>
