@@ -4,23 +4,22 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Layout.cshtml";
 }
+            <h1>#@Model.Id</h1>
 
-<h2>@Model.Id</h2>
+            <fieldset>
+                <pre><code>@Html.DisplayFor(model => model.Content)</code></pre>
 
-<fieldset>
-    <pre><code>@Html.DisplayFor(model => model.Content)</code></pre>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Creation)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Creation)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Creation)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Creation)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Expiration)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Expiration)
-    </div>
-</fieldset>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Expiration)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Expiration)
+                </div>
+            </fieldset>
