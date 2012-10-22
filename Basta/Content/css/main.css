@@ -181,6 +181,7 @@ nav a:hover {
     font-style: normal;
 }
 
+body textarea,
 body pre code 
 {
     font-family: 'Anonymous Pro', sans-serif;

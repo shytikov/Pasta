@@ -5,21 +5,24 @@
     Layout = "~/Views/Layout.cshtml";
 }
 
-<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-
 <article>
     @using (Html.BeginForm()) {
         @Html.ValidationSummary(true)
 
         <fieldset>
-            @Html.TextAreaFor(model => model.Content, 20, 80, new object())
-            <br />
-            <input type="submit" value="Create" />
+            @Html.TextAreaFor(model => model.Content, 25, 85, new object())
+            <p><input type="submit" value="Store" /></p>
         </fieldset>
     }
 </article>
 
 <aside>
     <h3>Paste a recipe</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+    <p>Please use your favorite programming language to compose code snipnet, store it and pass link over your colleagues.</p>
+    <p>The system will take care of rest:</p>
+    <ul>
+        <li>Highlighting sintax with the taste;</li>
+        <li>Keeping eye on pastie experation date;</li>
+        <li>Securing data storage;</li>
+    </ul>
 </aside>
