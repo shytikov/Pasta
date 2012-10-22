@@ -43,6 +43,10 @@ namespace Basta.Models
         {
             return Convert.ToBase64String(Guid.NewGuid().ToByteArray())
                 .ToLower()
+                .Replace("l", "")
+                .Replace("o", "")
+                .Replace("1", "")
+                .Replace("0", "")
                 .Replace("=", "")
                 .Replace("+", "")
                 .Replace("/", "")
