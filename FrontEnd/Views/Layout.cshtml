@@ -20,16 +20,29 @@
     <![endif]-->
 </head>
 <body>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <span class="brand">Pasta</span>
-            <ul class="nav">
-                <li>@Html.ActionLink("Cook new!", "Create", "Pastie")</li>
-            </ul>
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title">Pasta & Basta</h1>
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Cook new!", "Create", "Pastie")</li>
+                    <li><a href="#">nav ul li a</a></li>
+                    <li><a href="#">nav ul li a</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <div class="main wrapper clearfix">
+            @RenderBody()
         </div>
     </div>
-    <div class="container">
-        @RenderBody()
+
+    <div class="footer-container">
+        <footer class="wrapper">
+            <h3>footer</h3>
+        </footer>
     </div>
 </body>
 </html>
