@@ -152,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Database\" />
-    <Folder Include="Content\ttf\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -165,6 +164,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pastie\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\font\anonymouspro-regular-webfont.eot" />
+    <None Include="Content\font\anonymouspro-regular-webfont.svg" />
+    <None Include="Content\font\anonymouspro-regular-webfont.ttf" />
+    <None Include="Content\font\anonymouspro-regular-webfont.woff" />
+    <None Include="Content\font\cuprum-regular-webfont.eot" />
+    <None Include="Content\font\cuprum-regular-webfont.svg" />
+    <None Include="Content\font\cuprum-regular-webfont.ttf" />
+    <None Include="Content\font\cuprum-regular-webfont.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
