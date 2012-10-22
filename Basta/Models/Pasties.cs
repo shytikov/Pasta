@@ -59,11 +59,11 @@ namespace Basta.Models
         /// <summary>
         /// Total number of pasties in the system
         /// </summary>
-        public int Total { get; private set }
+        public int Total { get; private set; }
 
         /// <summary>
         /// Number of pasties posted today
         /// </summary>
-        public int Today { get; private set }
+        public int Today { get; private set; }
     }
 }
