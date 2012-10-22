@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace FrontEnd
+namespace Basta
 {
     public class FilterConfig
     {

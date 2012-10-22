@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{2AD4F5EB-928C-4873-96D6-B7D718EB9CF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basta", "Basta\Basta.csproj", "{2AD4F5EB-928C-4873-96D6-B7D718EB9CF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd.Tests", "FrontEnd.Tests\FrontEnd.Tests.csproj", "{6FD6097B-A009-4F73-A836-AFA6842D20CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basta.Tests", "Basta.Tests\Basta.Tests.csproj", "{6FD6097B-A009-4F73-A836-AFA6842D20CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7BB38498-9DA5-478E-8767-18B7B0E986C2}"
 	ProjectSection(SolutionItems) = preProject
