@@ -8,6 +8,7 @@ TestResults
 
 csx
 packages
+*.swp
 *.suo
 *.mdf
 *_log.ldf
