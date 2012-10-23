@@ -27,7 +27,16 @@ namespace Basta
 
             using (var DocumentSession = Storage.Instance.OpenSession())
             {
-                var ExpiredPasties = DocumentSession.Query<Pastie>();
+                var ExpiredPasties = DocumentSession.Query<Pastie>()
+                    .Where(pastie => pastie.IsExpired() == true)
+                    .ToList();
+
+                foreach (var pastie in ExpiredPasties)
+                {
+                    DocumentSession.Delete(pastie);
+                }
+
+                DocumentSession.SaveChanges(); 
             }
         }
     }

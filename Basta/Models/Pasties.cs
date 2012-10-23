@@ -56,6 +56,20 @@ namespace Basta.Models
                 .Replace("/", "")
                 .Remove(5);
         }
+
+        /// <summary>
+        /// Checks wherever pastie get expired
+        /// </summary>
+        /// <returns></returns>
+        public bool IsExpired()
+        {
+            if (this.Expiration <= DateTime.UtcNow)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 
     public class Statistic

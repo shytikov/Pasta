@@ -78,11 +78,11 @@ namespace Basta.Controllers
         {
             var pastie = this.DocumentSession.Load<Pastie>(id);
 
-            if (pastie == null || pastie.Expiration <= DateTime.UtcNow)
+            if (pastie == null || pastie.IsExpired() == true)
             {
                 if (pastie != null)
                 {
-                    this.DocumentSession.Delete<Pastie>(pastie);
+                    this.DocumentSession.Delete(pastie);
                 }
 
                 return RedirectToAction("Create");
