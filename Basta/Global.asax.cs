@@ -28,7 +28,7 @@ namespace Basta
             using (var DocumentSession = Storage.Instance.OpenSession())
             {
                 var ExpiredPasties = DocumentSession.Query<Pastie>()
-                    .Where(pastie => pastie.IsExpired() == true)
+                    .Where(pastie => pastie.Expiration <= DateTime.UtcNow)
                     .ToList();
 
                 foreach (var pastie in ExpiredPasties)
