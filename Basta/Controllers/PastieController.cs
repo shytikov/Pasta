@@ -77,7 +77,16 @@ namespace Basta.Controllers
         public ActionResult Details(string id)
         {
             var pastie = this.DocumentSession.Load<Pastie>(id);
-            return View(pastie);
+
+            if (pastie.Expiration >= DateTime.UtcNow)
+            {
+                this.DocumentSession.Delete<Pastie>(pastie);
+                return RedirectToAction("Create");
+            }
+            else
+            {
+                return View(pastie);
+            }
         }
     }
 }
