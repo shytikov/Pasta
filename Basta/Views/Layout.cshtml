@@ -8,18 +8,20 @@
     <title>@ViewBag.Title</title>
     <meta name="author" content="Alexey Shytikov" />
     
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/vendor/normalize.min.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/main.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/vendor/github.css")" />
-   
-    <script type="text/javascript" src="@Url.Content("~/Content/js/vendor/highlight.pack.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor/normalize.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/main.css")" />
+    <!--<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor/github.css")" />-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor/prettify.css")" />
+    
+    <script type="text/javascript" src="@Url.Content("~/Content/js/vendor/prettify.js")"></script>
+    <!--<script type="text/javascript" src="@Url.Content("~/Content/js/vendor/highlight.pack.js")"></script>-->
 
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
 </head>
-<body>
+<body onload="prettyPrint()">
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 
     <div class="header-container">

@@ -1,14 +1,19 @@
 ﻿@model Basta.Models.Pastie
 
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "#" + Model.Id;
     Layout = "~/Views/Layout.cshtml";
 }
             <h1>#@Model.Id</h1>
 
             <fieldset>
-                <pre><code>@Html.DisplayFor(model => model.Content)</code></pre>
-
+                <code>
+                <pre class="gutter">@for (int i = 1; i < Model.Content.Split('\n').Length; i++) 
+                                    { 
+                                        @(i.ToString() + "\r\n" )
+                                    }</pre>
+                <pre class="prettyprint">@Html.DisplayFor(model => model.Content)</pre>
+                </code>
                 <div class="display-label">
                      @Html.DisplayNameFor(model => model.Creation)
                 </div>
