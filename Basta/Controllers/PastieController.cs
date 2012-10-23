@@ -45,7 +45,7 @@ namespace Basta.Controllers
         #endregion
 
         //
-        // GET: /Pastie/Create
+        // GET: /
 
         public ActionResult Create()
         {
@@ -54,7 +54,7 @@ namespace Basta.Controllers
         }
 
         //
-        // POST: /Pastie/Create
+        // POST: /
 
         [HttpPost]
         public ActionResult Create(Pastie pastie)
@@ -72,7 +72,7 @@ namespace Basta.Controllers
         }
 
         //
-        // GET: /Pastie/Details/5
+        // GET: /5de9y
 
         public ActionResult Details(string id)
         {
@@ -84,12 +84,21 @@ namespace Basta.Controllers
                 {
                     this.DocumentSession.Delete<Pastie>(pastie);
                 }
+
                 return RedirectToAction("Create");
             }
             else
             {
                 return View(pastie);
             }
+        }
+
+        //
+        // GET: /About
+
+        public ActionResult About()
+        {
+            return View();
         }
     }
 }

@@ -14,6 +14,12 @@ namespace Basta
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "About",
+                url: "About",
+                defaults: new { controller = "Pastie", action = "About" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{id}",
                 defaults: new { controller = "Pastie", action = "Details"}
