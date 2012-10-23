@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Basta.Warehouse;
+using Basta.Models;
 
 namespace Basta
 {
@@ -23,6 +24,11 @@ namespace Basta
 
             // Initializing RavenDB embeded instance
             Storage.Initialize();
+
+            using (var DocumentSession = Storage.Instance.OpenSession())
+            {
+                var ExpiredPasties = DocumentSession.Query<Pastie>();
+            }
         }
     }
 }

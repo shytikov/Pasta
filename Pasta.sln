@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basta", "Basta\Basta.csproj", "{2AD4F5EB-928C-4873-96D6-B7D718EB9CF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basta.Tests", "Basta.Tests\Basta.Tests.csproj", "{6FD6097B-A009-4F73-A836-AFA6842D20CB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7BB38498-9DA5-478E-8767-18B7B0E986C2}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -22,10 +20,6 @@ Global
 		{2AD4F5EB-928C-4873-96D6-B7D718EB9CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD4F5EB-928C-4873-96D6-B7D718EB9CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AD4F5EB-928C-4873-96D6-B7D718EB9CF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FD6097B-A009-4F73-A836-AFA6842D20CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FD6097B-A009-4F73-A836-AFA6842D20CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FD6097B-A009-4F73-A836-AFA6842D20CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FD6097B-A009-4F73-A836-AFA6842D20CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
