@@ -15,6 +15,12 @@ namespace Basta
 
             routes.MapRoute(
                 name: "Default",
+                url: "{id}",
+                defaults: new { controller = "Pastie", action = "Details"}
+            );
+
+            routes.MapRoute(
+                name: "Standard",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Pastie", action = "Create", id = UrlParameter.Optional }
             );
