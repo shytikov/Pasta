@@ -192,6 +192,7 @@
     <None Include="Content\font\cuprum-regular-webfont.svg" />
     <None Include="Content\font\cuprum-regular-webfont.ttf" />
     <None Include="Content\font\cuprum-regular-webfont.woff" />
+    <Content Include="Views\Pastie\About.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
