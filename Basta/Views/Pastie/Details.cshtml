@@ -6,25 +6,4 @@
 }
             <h1>#@Model.Id</h1>
 
-            <fieldset>
-                <code>
-                <pre class="gutter">@for (int i = 1; i < Model.Content.Split('\n').Length; i++) 
-                                    { 
-                                        @(i.ToString() + "\r\n" )
-                                    }</pre>
-                <pre class="prettyprint">@Html.DisplayFor(model => model.Content)</pre>
-                </code>
-                <div class="display-label">
-                     @Html.DisplayNameFor(model => model.Creation)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.Creation)
-                </div>
-
-                <div class="display-label">
-                     @Html.DisplayNameFor(model => model.Expiration)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.Expiration)
-                </div>
-            </fieldset>
+            <pre><code class="prettyprint">@Html.DisplayFor(model => model.Content)</code></pre>

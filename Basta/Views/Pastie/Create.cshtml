@@ -10,7 +10,7 @@
         @Html.ValidationSummary(true)
 
         <fieldset>
-            @Html.TextAreaFor(model => model.Content, 25, 85, new object())
+            @Html.TextAreaFor(model => model.Content, new { @class = "prettyprint" })
             <p><input type="submit" value="Store" /></p>
         </fieldset>
     }

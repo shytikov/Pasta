@@ -186,8 +186,14 @@ body
     font-family: 'Cuprum', sans-serif;
 }
 
+textarea 
+{
+    width: 100%;
+    height: 25em;
+}
+
 body textarea,
-body code pre
+body pre
 {
     display: block;
     font-family: 'Anonymous Pro', sans-serif;
@@ -199,13 +205,6 @@ body code pre
     -webkit-box-shadow: 0 5px 10px #aaa;
     -moz-box-shadow: 0 5px 10px #aaa;
         box-shadow: 0 5px 10px #aaa;
-}
-
-body code pre.prettyprint,
-body code pre.gutter 
-{
-    float: left;
-    padding: 5px;
 }
 
 
