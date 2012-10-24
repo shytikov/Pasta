@@ -170,17 +170,6 @@ nav a:hover {
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Anonymous Pro';
-    src: url('/Content/font/anonymouspro-regular-webfont.eot');
-    src: url('/Content/font/anonymouspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/Content/font/anonymouspro-regular-webfont.woff') format('woff'),
-         url('/Content/font/anonymouspro-regular-webfont.ttf') format('truetype'),
-         url('/Content/font/anonymouspro-regular-webfont.svg#anonymous_proregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body 
 {
     font-family: 'Cuprum', sans-serif;
@@ -196,7 +185,7 @@ body textarea,
 body pre
 {
     display: block;
-    font-family: 'Anonymous Pro', sans-serif;
+    font-family: monospace;
     font-size: 0.8em;
     line-height: 1.1;
     padding: 5px;

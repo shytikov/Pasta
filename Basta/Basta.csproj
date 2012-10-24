@@ -184,10 +184,6 @@
     <Content Include="Views\Pastie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\font\anonymouspro-regular-webfont.eot" />
-    <Content Include="Content\font\anonymouspro-regular-webfont.svg" />
-    <Content Include="Content\font\anonymouspro-regular-webfont.ttf" />
-    <Content Include="Content\font\anonymouspro-regular-webfont.woff" />
     <Content Include="Content\font\cuprum-regular-webfont.eot" />
     <Content Include="Content\font\cuprum-regular-webfont.svg" />
     <Content Include="Content\font\cuprum-regular-webfont.ttf" />
