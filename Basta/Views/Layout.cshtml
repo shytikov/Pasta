@@ -21,7 +21,7 @@
         <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
 </head>
-<body onload="@if (ViewBag.Highlight == true) { @("prettyPrint()") }">
+@Html.Raw(String.Format("<body{0}>", ViewBag.Highlight == true ? " onload=\"prettyPrint()\"" : ""))
     <div class="header-container">
         <header class="wrapper clearfix">
             <h1 class="title">Pasta & Basta</h1>
