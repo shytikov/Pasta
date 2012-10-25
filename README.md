@@ -13,3 +13,5 @@ So why do not install “Pasta & Basta” on your company's server environment? 
 * [HTML5 ★ Boilerplate](http://html5boilerplate.com/) as HTML template;
 * [Google Code Prettify](http://code.google.com/p/google-code-prettify/) for source highlighting;
 * Nice font called [Cuprum](http://www.google.com/webfonts/specimen/Cuprum) by [Jovanny Lemonad](http://www.jovanny.ru/).
+
+Working instance of this code could be found at http://pasta.apphb.com/
