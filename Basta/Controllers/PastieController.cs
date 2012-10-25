@@ -36,7 +36,7 @@ namespace Basta.Controllers
             }
 
             pastie.Creation = DateTime.UtcNow;
-            pastie.Expiration = DateTime.UtcNow.AddDays(1);
+            pastie.Expiration = DateTime.UtcNow.AddMonths(1);
 
             this.DocumentSession.Store(pastie);
             return RedirectToAction("Details", "Pastie", new { Id = pastie.Id }); 
