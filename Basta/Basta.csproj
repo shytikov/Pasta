@@ -187,6 +187,7 @@
     <Content Include="Content\font\cuprum-regular-webfont.eot" />
     <Content Include="Content\font\cuprum-regular-webfont.svg" />
     <Content Include="Content\font\cuprum-regular-webfont.ttf" />
+    <Content Include="Content\font\cuprum-regular-webfont.woff" />
     <Content Include="Views\Pastie\About.cshtml" />
   </ItemGroup>
   <PropertyGroup>
