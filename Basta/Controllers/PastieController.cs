@@ -12,37 +12,7 @@ namespace Basta.Controllers
 {
     public class PastieController : Controller
     {
-        #region RavenDB's specifics
-
         public IDocumentSession DocumentSession { get; set; }
-
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
-        {
-            if (filterContext.IsChildAction)
-            {
-                return;
-            }
-
-            this.DocumentSession = Storage.Instance.OpenSession();
-            base.OnActionExecuting(filterContext);
-        }
-
-        protected override void OnActionExecuted(ActionExecutedContext filterContext)
-        {
-            if (filterContext.IsChildAction)
-            {
-                return;
-            }
-
-            if (this.DocumentSession != null && filterContext.Exception == null)
-            {
-                this.DocumentSession.SaveChanges();
-            }
-
-            this.DocumentSession.Dispose();
-            base.OnActionExecuted(filterContext);
-        }
-        #endregion
 
         //
         // GET: /
@@ -57,6 +27,7 @@ namespace Basta.Controllers
         // POST: /
 
         [HttpPost]
+        [DataAccess]
         public ActionResult Create(Pastie pastie)
         {
             while (this.DocumentSession.Load<Pastie>(pastie.Id) != null) 
@@ -74,6 +45,7 @@ namespace Basta.Controllers
         //
         // GET: /5de9y
 
+        [DataAccess]
         public ActionResult Details(string id)
         {
             var pastie = this.DocumentSession.Load<Pastie>(id);
