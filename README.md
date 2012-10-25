@@ -14,4 +14,4 @@ So why do not install “Pasta & Basta” on your company's server environment? 
 * [Google Code Prettify](http://code.google.com/p/google-code-prettify/) for source highlighting;
 * Nice font called [Cuprum](http://www.google.com/webfonts/specimen/Cuprum) by [Jovanny Lemonad](http://www.jovanny.ru/).
 
-Working instance of this code could be found at http://pasta.apphb.com/
+Demo instance of this code could be found at [AppHarbor](http://pasta.apphb.com/)
