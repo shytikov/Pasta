@@ -27,7 +27,7 @@ namespace Basta.Controllers
         // POST: /
 
         [HttpPost]
-        [DataAccess]
+        [AccessData]
         public ActionResult Create(Pastie pastie)
         {
             while (this.DocumentSession.Load<Pastie>(pastie.Id) != null) 
@@ -45,7 +45,7 @@ namespace Basta.Controllers
         //
         // GET: /5de9y
 
-        [DataAccess]
+        [AccessData]
         public ActionResult Details(string id)
         {
             var pastie = this.DocumentSession.Load<Pastie>(id);
