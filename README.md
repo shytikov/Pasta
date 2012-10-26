@@ -1,6 +1,6 @@
 # Pasta & Basta
 
-## Pastbin clone designed for intranet use.
+## Pastbin clone designed for intranet use
 
 This code gives simple answer on complex question: *"Is it possible to share source code snipnet with the colleague without sending it over public network?"*
 
