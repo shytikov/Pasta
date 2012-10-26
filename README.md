@@ -1,5 +1,7 @@
 # Pasta & Basta
 
+## Pastbin clone designed for intranet use.
+
 This code gives simple answer on complex question: *"Is it possible to share source code snipnet with the colleague without sending it over public network?"*
 
 Instant messengers are great! But most common of them are installed outside your security boundaries. And these that have local servers in your building, as well as your corporate mail, obviously could not offer nice syntax highlighting.
