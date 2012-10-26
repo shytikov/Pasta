@@ -9,7 +9,7 @@ using Basta.Controllers;
 namespace Basta.Warehouse
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class AccessData : FilterAttribute, IActionFilter
+    public class DataAccess : FilterAttribute, IActionFilter
     {
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
