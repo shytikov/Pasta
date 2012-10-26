@@ -27,7 +27,7 @@ namespace Basta.Warehouse
             {
                 return;
             }
-            var controller = (PastieController)filterContext.Controller;
+            var controller = (IDataAccess)filterContext.Controller;
 
             if (controller.DocumentSession != null && filterContext.Exception == null)
             {

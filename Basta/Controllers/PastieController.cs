@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Basta.Controllers
 {
-    public class PastieController : Controller
+    public class PastieController : Controller, IDataAccess
     {
         public IDocumentSession DocumentSession { get; set; }
 
