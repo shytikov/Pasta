@@ -16,18 +16,16 @@ namespace Basta.Warehouse
             get
             {
                 if (instance == null)
-                    throw new InvalidOperationException(
-                      "IDocumentStore has not been initialized.");
+                    Initialize();
                 return instance;
             }
         }
 
-        public static IDocumentStore Initialize()
+        public static void Initialize()
         {
             instance = new EmbeddableDocumentStore { ConnectionStringName = "RavenDB" };
             instance.Conventions.IdentityPartsSeparator = "-";
             instance.Initialize();
-            return instance;
         }
     }
 }

@@ -27,7 +27,33 @@ namespace Basta.Controllers
 
             Post["/Create"] = parameters =>
             {
-                return Response.AsRedirect("/");
+                var pastie = new Pastie
+                {
+                    Content = this.Request.Form.Content,
+                    Creation = DateTime.UtcNow,
+                    Expiration = DateTime.UtcNow.AddMonths(1)
+                };
+
+                using (var session = Storage.Instance.OpenSession())
+                {
+                    do
+                    {
+                        pastie.RefreshId();
+                    } while (session.Load<Pastie>(pastie.Id) != null);
+
+                    session.Store(pastie);
+                    session.SaveChanges();
+                }
+
+                return Response.AsRedirect("/" + pastie.Id);
+            };
+
+            Get["/{id}"] = parameters =>
+            {
+                using (var session = Storage.Instance.OpenSession())
+                {
+                    return View["Pastie/Details.cshtml", session.Load<Pastie>((string)parameters.id)];
+                }
             };
         }
     }
