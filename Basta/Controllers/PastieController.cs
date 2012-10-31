@@ -15,13 +15,19 @@ namespace Basta.Controllers
     {
         public NancyController()
         {
-            Get["/"] = parameters => {
+            Get["/"] = parameters => 
+            {
                 return View["Pastie/Create.cshtml", new Pastie()];
             };
 
             Get["/About"] = parameters =>
             {
                 return View["Pastie/About.cshtml"];
+            };
+
+            Post["/Create"] = parameters =>
+            {
+                return Response.AsRedirect("/");
             };
         }
     }
