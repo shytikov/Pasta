@@ -129,10 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\PastieController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Models\Pastie.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Warehouse\DataAccess.cs" />
     <Compile Include="Warehouse\IDataAccess.cs" />
     <Compile Include="Warehouse\Storage.cs" />
@@ -166,7 +164,6 @@
     <Content Include="Content\js\vendor\lang-xq.js" />
     <Content Include="Content\js\vendor\lang-yaml.js" />
     <Content Include="Content\js\vendor\prettify.js" />
-    <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
