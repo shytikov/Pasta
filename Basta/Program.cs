@@ -10,7 +10,7 @@ namespace Basta
     {
         public MainModule()
         {
-            Get["/"] = parameters => "Hello World";
+            //Get["/"] = parameters => "Hello World";
         }
     }
 }

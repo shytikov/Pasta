@@ -11,6 +11,21 @@ using Nancy;
 
 namespace Basta.Controllers
 {
+    public class NancyController : NancyModule
+    {
+        public NancyController()
+        {
+            Get["/"] = parameters => {
+                return View["Pastie/Create.cshtml", new Pastie()];
+            };
+
+            Get["/About"] = parameters =>
+            {
+                return View["Pastie/About.cshtml"];
+            };
+        }
+    }
+
     public class PastieController : Controller, IDataAccess
     {
         public IDocumentSession DocumentSession { get; set; }

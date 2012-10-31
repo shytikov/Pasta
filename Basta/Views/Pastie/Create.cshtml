@@ -2,19 +2,9 @@
 
 @{
     ViewBag.Title = "Cook new pasta!";
-    Layout = "~/Views/Layout.cshtml";
+    Layout = "Layout.cshtml";
 }
 
-<article>
-    @using (Html.BeginForm()) {
-        @Html.ValidationSummary(true)
-
-        <fieldset>
-            @Html.TextAreaFor(model => model.Content, new { @class = "prettyprint" })
-            <p><input type="submit" value="Store" /></p>
-        </fieldset>
-    }
-</article>
 
 <aside>
     <h3>Pass a recipe!</h3>
