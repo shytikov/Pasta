@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Basta.Models;
-using Raven.Client;
-using Basta.Warehouse;
 using System.Text;
+using System.Web;
+using Basta.Models;
+using Basta.Warehouse;
 using Nancy;
+using Raven.Client;
 
 namespace Basta.Controllers
 {
@@ -17,7 +16,7 @@ namespace Basta.Controllers
         {
             Get["/"] = parameters => 
             {
-                return View["Pastie/Create.cshtml", new Pastie()];
+                return View["Pastie/Create.cshtml", new PastieModel()];
             };
 
             Get["/About"] = parameters =>
@@ -27,7 +26,7 @@ namespace Basta.Controllers
 
             Post["/Create"] = parameters =>
             {
-                var pastie = new Pastie
+                var pastie = new PastieModel
                 {
                     Content = this.Request.Form.Content,
                     Creation = DateTime.UtcNow,
@@ -39,7 +38,7 @@ namespace Basta.Controllers
                     do
                     {
                         pastie.RefreshId();
-                    } while (session.Load<Pastie>(pastie.Id) != null);
+                    } while (session.Load<PastieModel>(pastie.Id) != null);
 
                     session.Store(pastie);
                     session.SaveChanges();
@@ -52,7 +51,7 @@ namespace Basta.Controllers
             {
                 using (var session = Storage.Instance.OpenSession())
                 {
-                    return View["Pastie/Details.cshtml", session.Load<Pastie>((string)parameters.id)];
+                    return View["Pastie/Details.cshtml", session.Load<PastieModel>((string)parameters.id)];
                 }
             };
         }
