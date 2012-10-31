@@ -8,7 +8,7 @@ namespace Basta
 {
     public class MainModule : NancyModule
     {
-        public void HelloModule()
+        public MainModule()
         {
             Get["/"] = parameters => "Hello World";
         }

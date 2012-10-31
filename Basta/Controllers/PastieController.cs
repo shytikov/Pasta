@@ -7,6 +7,7 @@ using Basta.Models;
 using Raven.Client;
 using Basta.Warehouse;
 using System.Text;
+using Nancy;
 
 namespace Basta.Controllers
 {
