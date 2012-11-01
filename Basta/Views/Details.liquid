@@ -1,0 +1,13 @@
+﻿{% extends "Layout.liquid" %}
+
+{% block title %}#{{ Model.Id }}{% endblock %}
+
+{% block header %}
+     <script type="text/javascript" src="/content/js/vendor/prettify.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>#{{ Model.Id }}</h1>
+
+    <pre><code class="prettyprint linenums">@Model.Content</code></pre>
+{% endblock %}

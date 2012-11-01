@@ -11,14 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/content/css/vendor/normalize.min.css" />
     <link rel="stylesheet" type="text/css" href="/content/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/content/css/vendor/prettify.css" />
-    @if (ViewBag.Highlight == true)
-    {
-    <script type="text/javascript" src="/content/js/vendor/prettify.js"></script>
-    }
-    @if (ViewBag.Highlight == null)
-    {
-    <script type="text/javascript" src="/content/js/vendor/jquery-1.8.2.min.js"></script>
-    }
+    {% block header %}{% endblock %}
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script>window.html5 || document.write('<script src="@Url.Content("~/content/js/vendor/html5shiv.js")"><\/script>')</script>
@@ -49,54 +42,6 @@
             <h3>&copy;2012</h3>
         </footer>
     </div>
-    @if (ViewBag.Highlight == null)
-    {
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("div.main form input:submit").click(function (event) {
-                var content = $("div.main form textarea").val();
-
-                if (content == "") {
-                    return false;
-                }
-
-                event.preventDefault();
-
-                var id;
-
-                $.post(
-                    "/Create",
-                    { "Content": content },
-                    function (pastie) {
-                        id = pastie.Id;
-                        $("div.main h1").text("#" + pastie.Id + "");
-                    },
-                    "json"
-                )
-
-                var main = $("div.main");
-
-                main.slideUp(function () {
-                    $("div.main > article, div.main > aside").remove();
-                    if (undefined == id) {
-                        main.prepend("<h1>#</h1>");
-                    } else {
-                        main.prepend("<h1>#" + id + "</h1>");
-                    }
-
-                    main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
-                    main.slideDown();
-
-                    $.getScript(
-                        "/content/js/vendor/prettify.js",
-                        function () {
-                            prettyPrint();
-                        });
-                });
-
-            })
-        });	
-    </script>
-    }
+    {% block script %}{% endblock %}
 </body>
 </html>

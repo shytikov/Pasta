@@ -192,6 +192,7 @@
     <Content Include="views\Pastie\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="views\Details.liquid" />
     <None Include="views\Layout.liquid" />
     <None Include="views\About.liquid" />
     <None Include="views\Create.liquid" />

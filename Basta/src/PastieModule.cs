@@ -14,7 +14,7 @@ namespace Basta
         {
             Get["/"] = parameters => 
             {
-                return View["Pastie/Create.cshtml", new PastieModel()];
+                return View["Create.liquid", new PastieModel()];
             };
 
             Get["/About"] = parameters =>
@@ -54,7 +54,7 @@ namespace Basta
             {
                 using (var session = Storage.Instance.OpenSession())
                 {
-                    return View["Pastie/Details.cshtml", session.Load<PastieModel>((string)parameters.id)];
+                    return View["Details.liquid", session.Load<PastieModel>((string)parameters.id)];
                 }
             };
         }

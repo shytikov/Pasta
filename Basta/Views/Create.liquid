@@ -1,0 +1,78 @@
+{% extends "Layout.liquid" %}
+
+{% block title %}Cook new!{% endblock %}
+
+{% block header %}
+     <script type="text/javascript" src="/content/js/vendor/jquery-1.8.2.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <article>
+        <form action="/Create" method="post">
+            <fieldset>
+            <textarea class="prettyprint" id="Content" name="Content"></textarea>
+            <p><input type="submit" value="Store" /></p>
+            </fieldset>
+        </form>
+    </article>
+
+    <aside>
+        <h3>Pass a recipe!</h3>
+        <p>Please use your favorite programming language to compose code snipnet, store it and pass link over your colleagues. The code will be securely kept for one month.</p>
+        <p>The system will take care of rest:</p>
+        <ul>
+            <li>Carefully detecting language used;</li>
+            <li>Highlighting sintax with the taste;</li>
+            <li>Keeping eye on experation date;</li>
+        </ul>
+    </aside>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("div.main form input:submit").click(function (event) {
+                var content = $("div.main form textarea").val();
+
+                if (content == "") {
+                    return false;
+                }
+
+                event.preventDefault();
+
+                var id;
+
+                $.post(
+                    "/Create",
+                    { "Content": content },
+                    function (pastie) {
+                        id = pastie.Id;
+                        $("div.main h1").text("#" + pastie.Id + "");
+                    },
+                    "json"
+                )
+
+                var main = $("div.main");
+
+                main.slideUp(function () {
+                    $("div.main > article, div.main > aside").remove();
+                    if (undefined == id) {
+                        main.prepend("<h1>#</h1>");
+                    } else {
+                        main.prepend("<h1>#" + id + "</h1>");
+                    }
+
+                    main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
+                    main.slideDown();
+
+                    $.getScript(
+                        "/content/js/vendor/prettify.js",
+                        function () {
+                            prettyPrint();
+                        });
+                });
+
+            })
+        });	
+    </script>
+{% endblock %}
