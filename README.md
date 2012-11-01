@@ -10,10 +10,10 @@ So why do not install “Pasta & Basta” on your company's server environment? 
 
 “Pasta & Basta” build with web standards in mind and takes advantage of industry’s standard solutions:
 
-* [ASP.NET MVC 4](http://www.asp.net/mvc/mvc4) for application framework;
-* Embedded [RavenDB](http://www.ravendb.net/) for database;
+* [Nancy](http://nancyfx.org/) for application framework;
+* Embedded [RavenDB](http://ravendb.net/) for database;
 * [HTML5 ★ Boilerplate](http://html5boilerplate.com/) as HTML template;
 * [Google Code Prettify](http://code.google.com/p/google-code-prettify/) for source highlighting;
-* Nice font called [Cuprum](http://www.google.com/webfonts/specimen/Cuprum) by [Jovanny Lemonad](http://www.jovanny.ru/).
+* Nice font called [Cuprum](http://google.com/webfonts/specimen/Cuprum/) by [Jovanny Lemonad](http://jovanny.ru/).
 
 Demo instance of this code could be found at [AppHarbor](http://pasta.apphb.com/).
