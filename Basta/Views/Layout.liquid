@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
     
-    <title>@ViewBag.Title</title>
+    <title>Pasta & Basta :: {% block title %}{% endblock %}</title>
     <meta name="author" content="Alexey Shytikov" />
     
     <link rel="stylesheet" type="text/css" href="/content/css/vendor/normalize.min.css" />
@@ -40,7 +40,7 @@
 
     <div class="main-container">
         <div class="main wrapper clearfix">
-            @RenderBody()
+            {% block content %}{% endblock %}
         </div>
     </div>
 
