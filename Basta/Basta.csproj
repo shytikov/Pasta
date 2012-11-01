@@ -117,10 +117,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\PastieModel.cs" />
-    <Compile Include="src\PastieModule.cs" />
+    <Compile Include="src\Pastie.cs" />
+    <Compile Include="src\Module.cs" />
     <Compile Include="src\Storage.cs" />
   </ItemGroup>
   <ItemGroup>

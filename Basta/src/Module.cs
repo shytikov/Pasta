@@ -8,13 +8,13 @@ using Raven.Client;
 
 namespace Basta
 {
-    public class PastieModule : NancyModule
+    public class Module : NancyModule
     {
-        public PastieModule()
+        public Module()
         {
             Get["/"] = parameters => 
             {
-                return View["Create.liquid", new PastieModel()];
+                return View["Create.liquid", new Pastie()];
             };
 
             Get["/About"] = parameters =>
@@ -24,7 +24,7 @@ namespace Basta
 
             Post["/Create"] = parameters =>
             {
-                var pastie = new PastieModel
+                var pastie = new Pastie
                 {
                     Content = this.Request.Form.Content,
                     Creation = DateTime.UtcNow,
@@ -36,7 +36,7 @@ namespace Basta
                     do
                     {
                         pastie.RefreshId();
-                    } while (session.Load<PastieModel>(pastie.Id) != null);
+                    } while (session.Load<Pastie>(pastie.Id) != null);
 
                     session.Store(pastie);
                     session.SaveChanges();
@@ -47,14 +47,14 @@ namespace Basta
                 pastie.Expiration = null;
 
                 // Sending only Id of the pastie created
-                return Response.AsJson<PastieModel>(pastie);
+                return Response.AsJson<Pastie>(pastie);
             };
 
             Get["/{id}"] = parameters =>
             {
                 using (var session = Storage.Instance.OpenSession())
                 {
-                    return View["Details.liquid", session.Load<PastieModel>((string)parameters.id)];
+                    return View["Details.liquid", session.Load<Pastie>((string)parameters.id)];
                 }
             };
         }

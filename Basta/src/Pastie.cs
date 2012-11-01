@@ -5,12 +5,12 @@ using System.Web;
 
 namespace Basta
 {
-    public class PastieModel
+    public class Pastie
     {
         /// <summary>
         /// Default constructor
         /// </summary>
-        public PastieModel()
+        public Pastie()
         {
             this.Id = RefreshId();
         }
