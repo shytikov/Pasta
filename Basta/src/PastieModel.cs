@@ -28,12 +28,12 @@ namespace Basta
         /// <summary>
         /// Moment in time when the paste was created
         /// </summary>
-        public DateTime Creation { get; set; }
+        public DateTime? Creation { get; set; }
 
         /// <summary>
         /// Moment in time after which pastie become inaccessible
         /// </summary>
-        public DateTime Expiration { get; set; }
+        public DateTime? Expiration { get; set; }
 
         /// <summary>
         /// Generates unique id based on first five symbol of random GUID
