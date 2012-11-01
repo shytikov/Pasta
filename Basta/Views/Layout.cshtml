@@ -44,5 +44,44 @@
             <h3>&copy;2012</h3>
         </footer>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $("div.main form input:submit").click(function (event) {
+                var content = $("div.main form textarea").val();
+                content = $('<div/>').text(content).html();
+
+                if (content == "") {
+                    return false;
+                }
+
+                event.preventDefault();
+
+                var main = $("div.main");
+                
+                $.post(
+                    "/Create",
+                    { "Content": content },
+                    function (pastie) {
+                        main.append("<h1>#" + pastie.Id + "</h1>");
+                        main.append("<pre><code class='prettyprint linenums'>" + content + "</code></pre>");
+                        main.slideDown();
+
+                        $.getScript(
+                            "/content/js/vendor/prettify.js",
+                            function () {
+                                prettyPrint();
+                            });
+                    },
+                    "json"
+                )
+
+                main.slideUp(function () {
+                    $("div.main > article, div.main > aside").remove();
+                });
+
+            })
+        });	
+    </script>
 </body>
 </html>

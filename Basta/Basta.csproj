@@ -123,7 +123,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\PastieController.cs" />
+    <Compile Include="src\PastieModule.cs" />
     <Compile Include="src\PastieModel.cs" />
     <Compile Include="src\Storage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
