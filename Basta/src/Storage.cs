@@ -5,7 +5,7 @@ using System.Web;
 using Raven.Client;
 using Raven.Client.Embedded;
 
-namespace Basta.Warehouse
+namespace Basta
 {
     public class Storage
     {

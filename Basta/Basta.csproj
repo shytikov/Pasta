@@ -123,9 +123,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\PastieController.cs" />
-    <Compile Include="Models\PastieModel.cs" />
-    <Compile Include="Warehouse\Storage.cs" />
+    <Compile Include="src\PastieController.cs" />
+    <Compile Include="src\PastieModel.cs" />
+    <Compile Include="src\Storage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,7 +152,6 @@
     <Content Include="Content\js\vendor\lang-xq.js" />
     <Content Include="Content\js\vendor\lang-yaml.js" />
     <Content Include="Content\js\vendor\prettify.js" />
-    <Content Include="Raven.Studio.xap" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -170,20 +169,20 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Layout.cshtml" />
+    <Content Include="views\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pastie\Create.cshtml" />
+    <Content Include="views\Pastie\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pastie\Details.cshtml" />
+    <Content Include="views\Pastie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\font\cuprum-regular-webfont.eot" />
     <Content Include="Content\font\cuprum-regular-webfont.svg" />
     <Content Include="Content\font\cuprum-regular-webfont.ttf" />
     <Content Include="Content\font\cuprum-regular-webfont.woff" />
-    <Content Include="Views\Pastie\About.cshtml" />
+    <Content Include="views\Pastie\About.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

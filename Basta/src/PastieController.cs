@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using Basta.Models;
-using Basta.Warehouse;
 using Nancy;
 using Raven.Client;
 
-namespace Basta.Controllers
+namespace Basta
 {
     public class PastieController : NancyModule
     {
