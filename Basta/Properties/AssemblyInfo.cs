@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Basta.Host")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EPAM Systems")]
+[assembly: AssemblyCompany("Toolchain")]
 [assembly: AssemblyProduct("Pasta & Basta")]
-[assembly: AssemblyCopyright("Copyright © EPAM Systems 2012")]
+[assembly: AssemblyCopyright("Copyright © Toolchain 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
