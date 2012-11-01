@@ -8,28 +8,26 @@
     <title>@ViewBag.Title</title>
     <meta name="author" content="Alexey Shytikov" />
     
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor/normalize.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/main.css")" />
-    @if (ViewBag.Highlight == true)
-    {
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor/prettify.css")" />
-    <script type="text/javascript" src="@Url.Content("~/Content/js/vendor/prettify.js")"></script>
-    }
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/vendor/normalize.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/main.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/vendor/prettify.css")" />
+    <script type="text/javascript" src="@Url.Content("~/content/js/vendor/prettify.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/vendor/jquery-1.8.2.min.js")"></script>
     
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <script>window.html5 || document.write('<script src="@Url.Content("~/content/js/vendor/html5shiv.js")"><\/script>')</script>
     <![endif]-->
 </head>
-@Html.Raw(String.Format("<body{0}>", ViewBag.Highlight == true ? " onload=\"prettyPrint()\"" : ""))
+<body>
     <div class="header-container">
         <header class="wrapper clearfix">
             <h1 class="title">Pasta & Basta</h1>
             <nav>
                 <ul>
                     <li><a href="/">Cook new!</a></li>
-                    <li><a href="https://github.com/toolchain/Pasta">Source Code</a></li>
-                    <li><a href="/About">About</a></li>
+                    <li><a href="https://github.com/toolchain/Pasta/">Source Code</a></li>
+                    <li><a href="/About/">About</a></li>
                 </ul>
             </nav>
         </header>
