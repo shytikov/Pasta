@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Basta")]
+[assembly: AssemblyTitle("Basta.Host")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Toolchain")]
-[assembly: AssemblyProduct("Basta")]
-[assembly: AssemblyCopyright("Copyright © Toolchain 2012")]
+[assembly: AssemblyCompany("EPAM Systems")]
+[assembly: AssemblyProduct("Pasta & Basta")]
+[assembly: AssemblyCopyright("Copyright © EPAM Systems 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5e78ab73-1b43-4c19-98b5-ad1bc3fc7a69")]
+[assembly: Guid("c5011b6e-ae1e-4fdb-a5a2-c811193ca800")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -29,7 +29,8 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Revision and Build Numbers 
+// You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
