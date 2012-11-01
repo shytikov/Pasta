@@ -125,41 +125,105 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="content\font\cuprum-regular-webfont.eot" />
-    <None Include="content\font\cuprum-regular-webfont.svg" />
-    <None Include="content\font\cuprum-regular-webfont.ttf" />
-    <None Include="content\font\cuprum-regular-webfont.woff" />
+    <None Include="content\font\cuprum-regular-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\font\cuprum-regular-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\font\cuprum-regular-webfont.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\font\cuprum-regular-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
-    <None Include="views\About.liquid" />
-    <None Include="views\Create.liquid" />
-    <None Include="views\Details.liquid" />
-    <None Include="views\Layout.liquid" />
+    <None Include="views\About.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="views\Create.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="views\Details.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="views\Layout.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\css\main.css" />
-    <Content Include="content\css\vendor\normalize.min.css" />
-    <Content Include="content\css\vendor\prettify.css" />
-    <Content Include="content\js\vendor\html5shiv.js" />
-    <Content Include="content\js\vendor\jquery-1.8.2.min.js" />
-    <Content Include="content\js\vendor\lang-apollo.js" />
-    <Content Include="content\js\vendor\lang-clj.js" />
-    <Content Include="content\js\vendor\lang-css.js" />
-    <Content Include="content\js\vendor\lang-go.js" />
-    <Content Include="content\js\vendor\lang-hs.js" />
-    <Content Include="content\js\vendor\lang-lisp.js" />
-    <Content Include="content\js\vendor\lang-lua.js" />
-    <Content Include="content\js\vendor\lang-ml.js" />
-    <Content Include="content\js\vendor\lang-n.js" />
-    <Content Include="content\js\vendor\lang-proto.js" />
-    <Content Include="content\js\vendor\lang-scala.js" />
-    <Content Include="content\js\vendor\lang-sql.js" />
-    <Content Include="content\js\vendor\lang-tex.js" />
-    <Content Include="content\js\vendor\lang-vb.js" />
-    <Content Include="content\js\vendor\lang-vhdl.js" />
-    <Content Include="content\js\vendor\lang-wiki.js" />
-    <Content Include="content\js\vendor\lang-xq.js" />
-    <Content Include="content\js\vendor\lang-yaml.js" />
-    <Content Include="content\js\vendor\prettify.js" />
+    <None Include="content\css\main.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\css\vendor\normalize.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\css\vendor\prettify.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\html5shiv.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\jquery-1.8.2.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-apollo.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-clj.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-css.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-go.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-hs.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-lisp.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-lua.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-ml.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-n.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-proto.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-scala.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-sql.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-tex.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-vb.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-vhdl.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-wiki.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-xq.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\lang-yaml.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\js\vendor\prettify.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="db\" />
