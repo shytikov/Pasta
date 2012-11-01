@@ -8,16 +8,16 @@
     <title>@ViewBag.Title</title>
     <meta name="author" content="Alexey Shytikov" />
     
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/vendor/normalize.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/main.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/vendor/prettify.css")" />
+    <link rel="stylesheet" type="text/css" href="/content/css/vendor/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="/content/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/content/css/vendor/prettify.css" />
     @if (ViewBag.Highlight == true)
     {
-    <script type="text/javascript" src="@Url.Content("~/Content/js/vendor/prettify.js")"></script>
+    <script type="text/javascript" src="/content/js/vendor/prettify.js"></script>
     }
     @if (ViewBag.Highlight == null)
     {
-    <script type="text/javascript" src="@Url.Content("~/content/js/vendor/jquery-1.8.2.min.js")"></script>
+    <script type="text/javascript" src="/content/js/vendor/jquery-1.8.2.min.js"></script>
     }
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
