@@ -19,7 +19,7 @@ namespace Basta
 
             Get["/About"] = parameters =>
             {
-                return View["Pastie/About.cshtml"];
+                return View["About.liquid"];
             };
 
             Post["/Create"] = parameters =>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    
+    <title>@ViewBag.Title</title>
+    <meta name="author" content="Alexey Shytikov" />
+    
+    <link rel="stylesheet" type="text/css" href="/content/css/vendor/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="/content/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/content/css/vendor/prettify.css" />
+    @if (ViewBag.Highlight == true)
+    {
+    <script type="text/javascript" src="/content/js/vendor/prettify.js"></script>
+    }
+    @if (ViewBag.Highlight == null)
+    {
+    <script type="text/javascript" src="/content/js/vendor/jquery-1.8.2.min.js"></script>
+    }
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="@Url.Content("~/content/js/vendor/html5shiv.js")"><\/script>')</script>
+    <![endif]-->
+</head>
+@Html.Raw(String.Format("<body{0}>", ViewBag.Highlight == true ? " onload=\"prettyPrint()\"" : ""))
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title">Pasta & Basta</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Cook new!</a></li>
+                    <li><a href="https://github.com/toolchain/Pasta/">Source Code</a></li>
+                    <li><a href="/About/">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <div class="main wrapper clearfix">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <footer class="wrapper">
+            <h3>&copy;2012</h3>
+        </footer>
+    </div>
+    @if (ViewBag.Highlight == null)
+    {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("div.main form input:submit").click(function (event) {
+                var content = $("div.main form textarea").val();
+
+                if (content == "") {
+                    return false;
+                }
+
+                event.preventDefault();
+
+                var id;
+
+                $.post(
+                    "/Create",
+                    { "Content": content },
+                    function (pastie) {
+                        id = pastie.Id;
+                        $("div.main h1").text("#" + pastie.Id + "");
+                    },
+                    "json"
+                )
+
+                var main = $("div.main");
+
+                main.slideUp(function () {
+                    $("div.main > article, div.main > aside").remove();
+                    if (undefined == id) {
+                        main.prepend("<h1>#</h1>");
+                    } else {
+                        main.prepend("<h1>#" + id + "</h1>");
+                    }
+
+                    main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
+                    main.slideDown();
+
+                    $.getScript(
+                        "/content/js/vendor/prettify.js",
+                        function () {
+                            prettyPrint();
+                        });
+                });
+
+            })
+        });	
+    </script>
+    }
+</body>
+</html>
