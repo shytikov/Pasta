@@ -176,20 +176,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="views\Layout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="views\Pastie\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="views\Pastie\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="content\font\cuprum-regular-webfont.eot" />
     <Content Include="content\font\cuprum-regular-webfont.svg" />
     <Content Include="content\font\cuprum-regular-webfont.ttf" />
     <Content Include="content\font\cuprum-regular-webfont.woff" />
-    <Content Include="views\Pastie\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="views\Details.liquid" />
