@@ -17,7 +17,7 @@
         <script>window.html5 || document.write('<script src="@Url.Content("~/content/js/vendor/html5shiv.js")"><\/script>')</script>
     <![endif]-->
 </head>
-@Html.Raw(String.Format("<body{0}>", ViewBag.Highlight == true ? " onload=\"prettyPrint()\"" : ""))
+<body{% block load %}{% endblock %}>
     <div class="header-container">
         <header class="wrapper clearfix">
             <h1 class="title">Pasta & Basta</h1>

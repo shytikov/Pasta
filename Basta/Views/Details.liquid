@@ -6,6 +6,8 @@
      <script type="text/javascript" src="/content/js/vendor/prettify.js"></script>
 {% endblock %}
 
+{% block load %} onload="prettyPrint()"{% endblock %}
+
 {% block content %}
     <h1>#{{ Model.Id }}</h1>
 
