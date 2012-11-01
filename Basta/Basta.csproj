@@ -129,29 +129,29 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\main.css" />
-    <Content Include="Content\css\vendor\normalize.min.css" />
-    <Content Include="Content\css\vendor\prettify.css" />
-    <Content Include="Content\js\vendor\html5shiv.js" />
-    <Content Include="Content\js\vendor\lang-apollo.js" />
-    <Content Include="Content\js\vendor\lang-clj.js" />
-    <Content Include="Content\js\vendor\lang-css.js" />
-    <Content Include="Content\js\vendor\lang-go.js" />
-    <Content Include="Content\js\vendor\lang-hs.js" />
-    <Content Include="Content\js\vendor\lang-lisp.js" />
-    <Content Include="Content\js\vendor\lang-lua.js" />
-    <Content Include="Content\js\vendor\lang-ml.js" />
-    <Content Include="Content\js\vendor\lang-n.js" />
-    <Content Include="Content\js\vendor\lang-proto.js" />
-    <Content Include="Content\js\vendor\lang-scala.js" />
-    <Content Include="Content\js\vendor\lang-sql.js" />
-    <Content Include="Content\js\vendor\lang-tex.js" />
-    <Content Include="Content\js\vendor\lang-vb.js" />
-    <Content Include="Content\js\vendor\lang-vhdl.js" />
-    <Content Include="Content\js\vendor\lang-wiki.js" />
-    <Content Include="Content\js\vendor\lang-xq.js" />
-    <Content Include="Content\js\vendor\lang-yaml.js" />
-    <Content Include="Content\js\vendor\prettify.js" />
+    <Content Include="content\css\main.css" />
+    <Content Include="content\css\vendor\normalize.min.css" />
+    <Content Include="content\css\vendor\prettify.css" />
+    <Content Include="content\js\vendor\html5shiv.js" />
+    <Content Include="content\js\vendor\lang-apollo.js" />
+    <Content Include="content\js\vendor\lang-clj.js" />
+    <Content Include="content\js\vendor\lang-css.js" />
+    <Content Include="content\js\vendor\lang-go.js" />
+    <Content Include="content\js\vendor\lang-hs.js" />
+    <Content Include="content\js\vendor\lang-lisp.js" />
+    <Content Include="content\js\vendor\lang-lua.js" />
+    <Content Include="content\js\vendor\lang-ml.js" />
+    <Content Include="content\js\vendor\lang-n.js" />
+    <Content Include="content\js\vendor\lang-proto.js" />
+    <Content Include="content\js\vendor\lang-scala.js" />
+    <Content Include="content\js\vendor\lang-sql.js" />
+    <Content Include="content\js\vendor\lang-tex.js" />
+    <Content Include="content\js\vendor\lang-vb.js" />
+    <Content Include="content\js\vendor\lang-vhdl.js" />
+    <Content Include="content\js\vendor\lang-wiki.js" />
+    <Content Include="content\js\vendor\lang-xq.js" />
+    <Content Include="content\js\vendor\lang-yaml.js" />
+    <Content Include="content\js\vendor\prettify.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -163,7 +163,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Database\" />
+    <Folder Include="db\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -178,10 +178,10 @@
     <Content Include="views\Pastie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\font\cuprum-regular-webfont.eot" />
-    <Content Include="Content\font\cuprum-regular-webfont.svg" />
-    <Content Include="Content\font\cuprum-regular-webfont.ttf" />
-    <Content Include="Content\font\cuprum-regular-webfont.woff" />
+    <Content Include="content\font\cuprum-regular-webfont.eot" />
+    <Content Include="content\font\cuprum-regular-webfont.svg" />
+    <Content Include="content\font\cuprum-regular-webfont.ttf" />
+    <Content Include="content\font\cuprum-regular-webfont.woff" />
     <Content Include="views\Pastie\About.cshtml" />
   </ItemGroup>
   <PropertyGroup>
