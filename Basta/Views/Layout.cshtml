@@ -51,7 +51,7 @@
     </div>
     @if (ViewBag.Highlight == null)
     {
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             $("div.main form input:submit").click(function (event) {
                 var content = $("div.main form textarea").val();
@@ -62,27 +62,36 @@
 
                 event.preventDefault();
 
-                var main = $("div.main");
-                
+                var id;
+
                 $.post(
                     "/Create",
                     { "Content": content },
                     function (pastie) {
-                        main.append("<h1>#" + pastie.Id + "</h1>");
-                        main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
-                        main.slideDown();
-
-                        $.getScript(
-                            "/content/js/vendor/prettify.js",
-                            function () {
-                                prettyPrint();
-                            });
+                        id = pastie.Id;
+                        $("div.main h1").text("#" + pastie.Id + "");
                     },
                     "json"
                 )
 
+                var main = $("div.main");
+
                 main.slideUp(function () {
                     $("div.main > article, div.main > aside").remove();
+                    if (undefined == id) {
+                        main.prepend("<h1>#</h1>");
+                    } else {
+                        main.prepend("<h1>#" + id + "</h1>");
+                    }
+
+                    main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
+                    main.slideDown();
+
+                    $.getScript(
+                        "/content/js/vendor/prettify.js",
+                        function () {
+                            prettyPrint();
+                        });
                 });
 
             })
