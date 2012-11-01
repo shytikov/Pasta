@@ -11,15 +11,20 @@
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/vendor/normalize.min.css")" />
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/main.css")" />
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/css/vendor/prettify.css")" />
-    <script type="text/javascript" src="@Url.Content("~/content/js/vendor/prettify.js")"></script>
+    @if (ViewBag.Highlight == true)
+    {
+    <script type="text/javascript" src="@Url.Content("~/Content/js/vendor/prettify.js")"></script>
+    }
+    @if (ViewBag.Highlight == null)
+    {
     <script type="text/javascript" src="@Url.Content("~/content/js/vendor/jquery-1.8.2.min.js")"></script>
-    
+    }
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script>window.html5 || document.write('<script src="@Url.Content("~/content/js/vendor/html5shiv.js")"><\/script>')</script>
     <![endif]-->
 </head>
-<body>
+@Html.Raw(String.Format("<body{0}>", ViewBag.Highlight == true ? " onload=\"prettyPrint()\"" : ""))
     <div class="header-container">
         <header class="wrapper clearfix">
             <h1 class="title">Pasta & Basta</h1>
@@ -44,12 +49,12 @@
             <h3>&copy;2012</h3>
         </footer>
     </div>
-
+    @if (ViewBag.Highlight == null)
+    {
     <script>
         $(document).ready(function () {
             $("div.main form input:submit").click(function (event) {
                 var content = $("div.main form textarea").val();
-                content = $('<div/>').text(content).html();
 
                 if (content == "") {
                     return false;
@@ -64,7 +69,7 @@
                     { "Content": content },
                     function (pastie) {
                         main.append("<h1>#" + pastie.Id + "</h1>");
-                        main.append("<pre><code class='prettyprint linenums'>" + content + "</code></pre>");
+                        main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
                         main.slideDown();
 
                         $.getScript(
@@ -83,5 +88,6 @@
             })
         });	
     </script>
+    }
 </body>
 </html>
