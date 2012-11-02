@@ -14,7 +14,7 @@ namespace Basta
         {
             Get["/"] = parameters => 
             {
-                return View["Create.liquid", new Pastie()];
+                return View["Create.liquid"];
             };
 
             Get["/About"] = parameters =>
