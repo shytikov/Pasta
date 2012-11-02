@@ -19,8 +19,11 @@ namespace Basta
         {
             using (CreateAndOpenWebServiceHost())
             {
-                Console.WriteLine("Service is now running on: {0}", BaseUri);
-                Console.ReadLine();
+                using (Storage.Instance)
+                {
+                    Console.WriteLine("Service is now running on: {0}", BaseUri);
+                    Console.ReadLine();
+                }
             }
         }
 
