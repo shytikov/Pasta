@@ -12,3 +12,4 @@ packages
 *.suo
 *.mdf
 *_log.ldf
+*.cache
