@@ -34,17 +34,21 @@ namespace Basta
                 Storage.Data.Add(pastie.Id, Storage.Worker.Serialize(pastie));
                 Storage.Data.Flush();
 
-                pastie.Content = null;
-                pastie.Creation = null;
-                pastie.Expiration = null;
-
                 // Sending only Id of the pastie created
-                return Response.AsJson<Pastie>(pastie);
+                return Response.AsJson(new { Id = pastie.Id });
             };
 
             Get["/{id}"] = parameters =>
             {
-                return View["Details.liquid", Storage.Worker.Deserialize<Pastie>(Storage.Data[parameters.id])];
+                try
+                {
+                    return View["Details.liquid", Storage.Worker.Deserialize<Pastie>(Storage.Data[parameters.id])];
+                }
+                catch (KeyNotFoundException ex)
+                {
+                    // TODO: add exception handling
+                    return ex.ToString();
+                }
             };
         }
     }
