@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Raven.Client;
-using Raven.Client.Embedded;
+using Microsoft.Isam.Esent.Collections.Generic;
 
 namespace Basta
 {
     public class Storage
     {
-        private static IDocumentStore instance;
+        private static PersistentDictionary<string, Pastie> instance;
 
-        public static IDocumentStore Instance
+        public static PersistentDictionary<string, Pastie> Instance
         {
             get
             {
@@ -23,9 +22,7 @@ namespace Basta
 
         public static void Initialize()
         {
-            instance = new EmbeddableDocumentStore { ConnectionStringName = "RavenDB" };
-            instance.Conventions.IdentityPartsSeparator = "-";
-            instance.Initialize();
+            instance = new PersistentDictionary<string, Pastie>("db");
         }
     }
 }
