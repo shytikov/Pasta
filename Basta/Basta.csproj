@@ -46,8 +46,11 @@
     <Reference Include="DotLiquid">
       <HintPath>..\packages\DotLiquid.1.7.0\lib\NET40\DotLiquid.dll</HintPath>
     </Reference>
-    <Reference Include="Esent.Interop">
-      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Esent.Interop.dll</HintPath>
+    <Reference Include="Esent.Collections, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ManagedEsent.1.6\lib\net20\Esent.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Interop, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\ICSharpCode.NRefactory.dll</HintPath>
@@ -141,6 +144,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="README.rtf" />
     <None Include="views\About.liquid">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
