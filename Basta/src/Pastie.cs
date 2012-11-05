@@ -5,15 +5,16 @@ using System.Web;
 
 namespace Basta
 {
-    public class Pastie
+    [Serializable]
+    public struct Pastie
     {
         /// <summary>
         /// Default constructor
         /// </summary>
-        public Pastie()
-        {
-            this.Id = RefreshId();
-        }
+        // public Pastie()
+        // {
+        //     this.Id = RefreshId();
+        // }
 
         /// <summary>
         /// Unique id of the pastie stored
@@ -39,6 +40,7 @@ namespace Basta
         /// Generates unique id based on first five symbol of random GUID
         /// </summary>
         /// <returns></returns>
+        /*
         public string RefreshId()
         {
             return Convert.ToBase64String(Guid.NewGuid().ToByteArray())
@@ -70,5 +72,6 @@ namespace Basta
 
             return false;
         }
+        */
     }
 }
