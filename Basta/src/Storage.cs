@@ -3,53 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.Isam.Esent.Collections.Generic;
+using Nancy.Json;
 
 namespace Basta
 {
     public class Storage
     {
-        private static PersistentDictionary<string, Pastie> instance;
+        private static PersistentDictionary<string, string> data;
+        private static JavaScriptSerializer worker;
 
-        public static PersistentDictionary<string, Pastie> Instance
+        public static PersistentDictionary<string, string> Data
         {
             get
             {
-                if (instance == null)
-                    Initialize();
-                return instance;
+                if (data == null)
+                {
+                    InitializeData();
+                }
+                return data;
+            }
+        }
+
+        public static JavaScriptSerializer Worker
+        {
+            get
+            {
+                if (worker == null)
+                {
+                    InitializeWorker();
+                }
+                return worker;
             }
         }
 
         /// <summary>
         /// Initializes instance of PersistentDictionary based on Esent storage
         /// </summary>
-        public static void Initialize()
+        private static void InitializeData()
         {
             // TODO: move db folder setting to app.config
-            instance = new PersistentDictionary<string, Pastie>("db");
+            data = new PersistentDictionary<string, string>("db");
         }
 
         /// <summary>
-        /// Generates unique id based on first five symbol of random GUID
+        /// Initializes instance of worker to serialize / deserialize objects from / to JSON
         /// </summary>
-        /// <returns></returns>
-        public static string GenerateId()
+        private static void InitializeWorker()
         {
-            // TODO: validate against storage that Id is unique
-            return Convert.ToBase64String(Guid.NewGuid().ToByteArray())
-                .ToLower()
-                .Replace("l", "")
-                .Replace("o", "")
-                .Replace("1", "")
-                .Replace("0", "")
-                .Replace("g", "")
-                .Replace("b", "")
-                .Replace("9", "")
-                .Replace("6", "")
-                .Replace("=", "")
-                .Replace("+", "")
-                .Replace("/", "")
-                .Remove(5);
+            worker = new JavaScriptSerializer();
         }
     }
 }

@@ -25,15 +25,14 @@ namespace Basta
             {
                 var pastie = new Pastie
                 {
-                    Id = Storage.GenerateId(),
                     Content = this.Request.Form.Content,
                     Creation = DateTime.UtcNow,
                     // TODO: expiration should be more flexible
                     Expiration = DateTime.UtcNow.AddMonths(1)
                 };
 
-                Storage.Instance.Add(pastie.Id, pastie);
-                Storage.Instance.Flush();
+                Storage.Data.Add(pastie.Id, Storage.Worker.Serialize(pastie));
+                Storage.Data.Flush();
 
                 pastie.Content = null;
                 pastie.Creation = null;
@@ -45,7 +44,7 @@ namespace Basta
 
             Get["/{id}"] = parameters =>
             {
-                return View["Details.liquid", Storage.Instance[parameters.id]];
+                return View["Details.liquid", Storage.Worker.Deserialize<Pastie>(Storage.Data[parameters.id])];
             };
         }
     }
