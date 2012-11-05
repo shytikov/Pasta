@@ -35,6 +35,7 @@ namespace Basta
         /// <returns></returns>
         public static string GenerateId()
         {
+            // TODO: validate against storage that Id is unique
             return Convert.ToBase64String(Guid.NewGuid().ToByteArray())
                 .ToLower()
                 .Replace("l", "")

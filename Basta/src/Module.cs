@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using Nancy;
-// using Raven.Client;
 
 namespace Basta
 {
@@ -26,22 +25,16 @@ namespace Basta
             {
                 var pastie = new Pastie
                 {
+                    Id = Storage.GenerateId(),
                     Content = this.Request.Form.Content,
                     Creation = DateTime.UtcNow,
+                    // TODO: expiration should be more flexible
                     Expiration = DateTime.UtcNow.AddMonths(1)
                 };
-                /*
-                using (var session = Storage.Instance.OpenSession())
-                {
-                    do
-                    {
-                        pastie.RefreshId();
-                    } while (session.Load<Pastie>(pastie.Id) != null);
 
-                    session.Store(pastie);
-                    session.SaveChanges();
-                }
-                */
+                Storage.Instance.Add(pastie.Id, pastie);
+                Storage.Instance.Flush();
+
                 pastie.Content = null;
                 pastie.Creation = null;
                 pastie.Expiration = null;
@@ -52,13 +45,7 @@ namespace Basta
 
             Get["/{id}"] = parameters =>
             {
-                return "Hi";
-                /*
-                using (var session = Storage.Instance.OpenSession())
-                {
-                    return View["Details.liquid", session.Load<Pastie>((string)parameters.id)];
-                }
-                */
+                return View["Details.liquid", Storage.Instance[parameters.id]];
             };
         }
     }
