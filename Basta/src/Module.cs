@@ -42,7 +42,9 @@ namespace Basta
             {
                 try
                 {
-                    return View["Details.liquid", Storage.Worker.Deserialize<Pastie>(Storage.Data[parameters.id])];
+                    var pastie = Storage.Worker.Deserialize<Pastie>(Storage.Data[parameters.id]);
+                    // TODO: check on expiration date
+                    return View["Details.liquid", pastie];
                 }
                 catch (KeyNotFoundException ex)
                 {
