@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 using Nancy;
 using Nancy.Hosting.Wcf;
-using System.ServiceModel;
-using System.ServiceModel.Web;
 
 namespace Basta
 {
@@ -13,7 +14,16 @@ namespace Basta
     {
         // TODO: move address setting to app.config
 
-        private static readonly Uri BaseUri = new Uri("http://0.0.0.0:3000/");
+        protected static Uri BaseUri
+        {
+            get
+            {
+                return new Uri(
+                    String.Format("http://{0}:{1}/", 
+                    ConfigurationManager.AppSettings["host"], 
+                    ConfigurationManager.AppSettings["port"]));
+            }
+        }
 
         static void Main(string[] args)
         {

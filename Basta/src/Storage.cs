@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using Microsoft.Isam.Esent.Collections.Generic;
 using Nancy.Json;
-using System.Configuration;
 
 namespace Basta
 {
@@ -42,7 +42,7 @@ namespace Basta
         /// </summary>
         private static void InitializeData()
         {
-            data = new PersistentDictionary<string, string>(ConfigurationManager.ConnectionStrings["Esent"].ConnectionString);
+            data = new PersistentDictionary<string, string>(ConfigurationManager.ConnectionStrings["esent"].ConnectionString);
         }
 
         /// <summary>
