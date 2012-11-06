@@ -11,7 +11,8 @@ So why do not install “Pasta & Basta” on your company's server environment? 
 “Pasta & Basta” build with web standards in mind and takes advantage of industry’s standard solutions:
 
 * [Nancy](http://nancyfx.org/) for application framework;
-* Embedded [RavenDB](http://ravendb.net/) for database;
+* Embedded [ESENT](http://managedesent.codeplex.com/) for database;
+* [Liquid](http://liquidmarkup.org/) as secure template engine; 
 * [HTML5 ★ Boilerplate](http://html5boilerplate.com/) as HTML template;
 * [Google Code Prettify](http://code.google.com/p/google-code-prettify/) for source highlighting;
 * Nice font called [Cuprum](http://google.com/webfonts/specimen/Cuprum/) by [Jovanny Lemonad](http://jovanny.ru/).
