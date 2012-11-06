@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.Isam.Esent.Collections.Generic;
 using Nancy.Json;
+using System.Configuration;
 
 namespace Basta
 {
@@ -41,8 +42,7 @@ namespace Basta
         /// </summary>
         private static void InitializeData()
         {
-            // TODO: move db folder setting to app.config
-            data = new PersistentDictionary<string, string>("db");
+            data = new PersistentDictionary<string, string>(ConfigurationManager.ConnectionStrings["Esent"].ConnectionString);
         }
 
         /// <summary>
