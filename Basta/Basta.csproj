@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="content\css\main.css">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="content\css\vendor\normalize.min.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -186,6 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="db\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="content\js\main.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
