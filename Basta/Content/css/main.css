@@ -182,7 +182,8 @@ textarea
 }
 
 body textarea,
-body pre
+body pre,
+#Content
 {
     display: block;
     font-family: monospace;
@@ -196,7 +197,12 @@ body pre
         box-shadow: 0 5px 10px #aaa;
 }
 
-
+#Content
+{
+    width: 1026px;
+    height: 400px;
+    overflow: auto;
+}
 
 
 
