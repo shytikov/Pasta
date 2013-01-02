@@ -96,9 +96,9 @@ $(document).ready(function () {
         main.slideUp(function () {
             $("div.main form").remove();
             if (undefined == id) {
-                main.prepend("<h1>#</h1>");
+                main.prepend("<h1>Saving...</h1>");
             } else {
-                main.prepend("<h1>#" + id + "</h1>");
+                main.prepend("<h1>Saved to: <a href='" + window.location + id + "'>" + window.location + id + "</a></h1>");
             }
 
             if (isText) {
