@@ -51,6 +51,7 @@ namespace Basta
         private static void InitializeWorker()
         {
             worker = new JavaScriptSerializer();
+            worker.MaxJsonLength = 2147483647;
         }
     }
 }

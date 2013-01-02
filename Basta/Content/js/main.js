@@ -62,14 +62,15 @@ $(document).ready(function () {
     function submitHandler(event) {
         /// <summary>Handles submit event.</summary>
         var content;
+        var isText = ($("div.main form #Content img").size() == 0) ? true : false;
 
-        if ($("div.main form #Content img").size() == 0) {
+
+        if (isText) {
             // Only text is inserted
             content = $("div.main form #Content textarea").text();
         } else {
             // Image is inserted
-            content = $("div.main form #Content img").prop("src");
-            alert(content);
+            content = $("div.main form #Content").html();
         }
 
         if (content == "") {
@@ -100,7 +101,11 @@ $(document).ready(function () {
                 main.prepend("<h1>#" + id + "</h1>");
             }
 
-            main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
+            if (isText) {
+                main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
+            } else {
+                main.append("<div id='Content'>" + content + "</div>");
+            }
             main.slideDown();
 
             $.getScript(

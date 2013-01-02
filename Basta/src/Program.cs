@@ -43,8 +43,16 @@ namespace Basta
                 new NancyWcfGenericService(new DefaultNancyBootstrapper()),
                 BaseUri);
 
-            host.AddServiceEndpoint(typeof(NancyWcfGenericService), new WebHttpBinding(), "");
+            var binding = new WebHttpBinding();
+            binding.MaxReceivedMessageSize = 2147483647;
+            binding.MaxBufferSize = 2147483647;
+
+            host.AddServiceEndpoint(typeof(NancyWcfGenericService), binding, "");
             host.Open();
+
+            BasicHttpBinding httpBinding = new BasicHttpBinding();
+            httpBinding.MaxReceivedMessageSize = 2147483647;
+            httpBinding.MaxBufferSize = 2147483647;
 
             return host;
         }
