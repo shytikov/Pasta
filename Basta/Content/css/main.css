@@ -185,6 +185,8 @@ body textarea,
 body pre,
 #Content
 {
+    font-size: 11px;    
+    line-height: 1.1;
     display: block;
     font-family: monospace;
     padding: 5px;
@@ -195,8 +197,6 @@ body pre,
 {
     width: 1026px;
     height: 400px;
-    font-size: 0.8em;
-    line-height: 1.1;
     overflow: auto;
     border: 1px solid #aaa;
     -webkit-box-shadow: 0 5px 10px #aaa;
@@ -208,8 +208,8 @@ body textarea
 {
     padding: 0px;
     border: 0px solid #aaa;
-    width: 1016px;
-    height: 390px;
+    width: 1021px;
+    height: 395px;
     resize: none;
 }
 

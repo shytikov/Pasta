@@ -32,24 +32,45 @@ $(document).ready(function () {
         var content;
         if ($("div.main form #Content img").size() == 0) {
             // Only text is inserted
-            content = $("div.main form #Content").text();
-            $("div.main form #Content").empty()
-                                       .prop("contenteditable", "false")
-                                       .append("<textarea>" + content + "</textarea>");
+            textHandler($("div.main form #Content").html());
         } else {
             // Image is inserted
-            content = $("div.main form #Content img").prop("src");
-            $("div.main form #Content").empty()
-                                       .prop("contenteditable", "false")
-                                       .append("<img src='" + content + "' />");
+            imageHandler($("div.main form #Content img").prop("src"));
         }
-        $("div.main form #Content textarea").focus();
+
         isPasteHandlerEnabled = false;
+    }
+
+    function textHandler(content) {
+        content = content.replace(/<br>/gi, "\r\n");
+        content = content.replace(/(<([^>]+)>)/ig, "")
+        $("div.main form #Content").empty()
+                                   .prop("contenteditable", "false")
+                                   .append("<textarea>" + content + "</textarea>");
+
+        $("div.main form #Content textarea").focus();
+    }
+
+    function imageHandler(content) {
+        $("div.main form #Content").empty()
+                                   .prop("contenteditable", "false")
+                                   .append("<img src='" + content + "' />");
+
+        $("div.main form #Content img").focus();
     }
 
     function submitHandler(event) {
         /// <summary>Handles submit event.</summary>
-        var content = $("div.main form #Content").html();
+        var content;
+
+        if ($("div.main form #Content img").size() == 0) {
+            // Only text is inserted
+            content = $("div.main form #Content textarea").text();
+        } else {
+            // Image is inserted
+            content = $("div.main form #Content img").prop("src");
+            alert(content);
+        }
 
         if (content == "") {
             return false;
