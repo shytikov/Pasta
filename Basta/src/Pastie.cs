@@ -35,6 +35,8 @@ namespace Basta
         /// </summary>
         public DateTime Expiration { get; set; }
 
+        public bool Image { get; set; }
+
         /// <summary>
         /// Generates unique id based on first five symbol of random GUID
         /// </summary>
@@ -55,6 +57,16 @@ namespace Basta
                 .Replace("+", "")
                 .Replace("/", "")
                 .Remove(5);
+        }
+
+        public bool isImage()
+        {
+            if (this.Content.StartsWith("<img src=\"data:image/png;base64,"))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>

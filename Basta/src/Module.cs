@@ -23,12 +23,14 @@ namespace Basta
 
             Post["/Create"] = parameters =>
             {
+                var image = ((string)this.Request.Form.Content).StartsWith("<img src=\"data:image/png;base64,") ? true : false;
                 var pastie = new Pastie
                 {
                     Content = this.Request.Form.Content,
                     Creation = DateTime.UtcNow,
                     // TODO: expiration should be more flexible
-                    Expiration = DateTime.UtcNow.AddMonths(1)
+                    Expiration = DateTime.UtcNow.AddMonths(1),
+                    Image = image
                 };
 
                 Storage.Data.Add(pastie.Id, Storage.Worker.Serialize(pastie));

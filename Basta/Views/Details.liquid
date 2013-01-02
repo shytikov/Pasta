@@ -11,6 +11,9 @@
 
 {% block content %}
     <h1>#{{ Model.Id }}</h1>
-
-    <pre><code class="prettyprint linenums">{{ Model.Content }}</code></pre>
+	{% if Model.Image %}
+		<div id="Content">{{ Model.Content }}</div>
+	{% else %}
+		<pre><code class="prettyprint linenums">{{ Model.Content }}</code></pre>
+	{% endif %}
 {% endblock %}
