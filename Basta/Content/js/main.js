@@ -1,9 +1,54 @@
 $(document).ready(function () {
+    var isPasteHandlerEnabled = true;
+
     function pasteHandler(jQueryEvent) {
         /// <summary>Handles Ctrl+V event.</summary>
+        if (isPasteHandlerEnabled) {
+            var event = jQueryEvent.originalEvent;
+            if (event.clipboardData) {
+                var items = event.clipboardData.items;
+                if (items) {
+                    for (var i = 0; i < items.length; ++i) {
+                        if (items[i].kind == "string" && items[i].type == "text/plain") {
+                            var text = items[i].getAsString(); // handleTextLoad
+                            alert(text);
+                            break;
+                        }
+                        if (items[i].kind == "file" && items[i].type.indexOf("image") == 0) {
+                            var blob = items[i].getAsFile();
+                            loadBlob(blob);
+                            break;
+                        }
+                    }
+                }
+                // alert("chrome");
+            } else {
+                setTimeout(checkInput, 1);
+            }
+        }
     }
 
-    $("div.main form input:submit").click(function (event) {
+    function checkInput() {
+        var content;
+        if ($("div.main form #Content img").size() == 0) {
+            // Only text is inserted
+            content = $("div.main form #Content").text();
+            $("div.main form #Content").empty()
+                                       .prop("contenteditable", "false")
+                                       .append("<textarea>" + content + "</textarea>");
+        } else {
+            // Image is inserted
+            content = $("div.main form #Content img").prop("src");
+            $("div.main form #Content").empty()
+                                       .prop("contenteditable", "false")
+                                       .append("<img src='" + content + "' />");
+        }
+        $("div.main form #Content textarea").focus();
+        isPasteHandlerEnabled = false;
+    }
+
+    function submitHandler(event) {
+        /// <summary>Handles submit event.</summary>
         var content = $("div.main form #Content").html();
 
         if (content == "") {
@@ -43,5 +88,8 @@ $(document).ready(function () {
                     prettyPrint();
                 });
         });
-    })
+    }
+
+    $(window).on('paste', pasteHandler);
+    $("div.main form input:submit").click(submitHandler);
 });	
