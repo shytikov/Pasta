@@ -10,18 +10,20 @@ $(document).ready(function () {
                 if (items) {
                     for (var i = 0; i < items.length; ++i) {
                         if (items[i].kind == "string" && items[i].type == "text/plain") {
-                            var text = items[i].getAsString(); // handleTextLoad
-                            alert(text);
+                            items[i].getAsString(textHandler);
+                            alert("text");
                             break;
                         }
                         if (items[i].kind == "file" && items[i].type.indexOf("image") == 0) {
-                            var blob = items[i].getAsFile();
-                            loadBlob(blob);
+                            var reader = new FileReader();
+                            reader.onload = function (event) {
+                                imageHandler(event.target.result); //event.target.results contains the base64 code to create the image.
+                            };
+                            reader.readAsDataURL(items[i].getAsFile());
                             break;
                         }
                     }
                 }
-                // alert("chrome");
             } else {
                 setTimeout(checkInput, 1);
             }
@@ -63,7 +65,6 @@ $(document).ready(function () {
         /// <summary>Handles submit event.</summary>
         var content;
         var isText = ($("div.main form #Content img").size() == 0) ? true : false;
-
 
         if (isText) {
             // Only text is inserted
