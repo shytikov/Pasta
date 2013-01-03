@@ -213,6 +213,18 @@ body textarea
     resize: none;
 }
 
+h1.title a:link,
+h1.title a:hover,
+h1.title a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1.title a:hover 
+{
+    text-decoration: underline;
+}
+
 h1 a:link,
 h1 a:hover,
 h1 a:visited {
