@@ -10,17 +10,6 @@ namespace Basta
 {
     class Program : ServiceBase
     {
-        protected static Uri BaseUri
-        {
-            get
-            {
-                return new Uri(
-                    String.Format("http://{0}:{1}/", 
-                    ConfigurationManager.AppSettings["host"], 
-                    ConfigurationManager.AppSettings["port"]));
-            }
-        }
-
         static void Main(string[] args)
         {
             using (CreateAndOpenWebServiceHost())
@@ -30,6 +19,18 @@ namespace Basta
                     Console.WriteLine("Service is now running on: {0}", BaseUri);
                     Console.ReadLine();
                 }
+            }
+        }
+
+        #region Private members
+        private static Uri BaseUri
+        {
+            get
+            {
+                return new Uri(
+                    String.Format("http://{0}:{1}/",
+                    ConfigurationManager.AppSettings["host"],
+                    ConfigurationManager.AppSettings["port"]));
             }
         }
 
@@ -48,5 +49,6 @@ namespace Basta
             
             return host;
         }
+        #endregion
     }
 }

@@ -78,6 +78,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Setup.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\Program.cs">
       <SubType>Component</SubType>
     </Compile>
