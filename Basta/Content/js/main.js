@@ -11,7 +11,6 @@ $(document).ready(function () {
                     for (var i = 0; i < items.length; ++i) {
                         if (items[i].kind == "string" && items[i].type == "text/plain") {
                             items[i].getAsString(textHandler);
-                            alert("text");
                             break;
                         }
                         if (items[i].kind == "file" && items[i].type.indexOf("image") == 0) {
@@ -27,6 +26,8 @@ $(document).ready(function () {
             } else {
                 setTimeout(checkInput, 1);
             }
+
+            isPasteHandlerEnabled = false;
         }
     }
 
@@ -39,11 +40,10 @@ $(document).ready(function () {
             // Image is inserted
             imageHandler($("div.main form #Content img").prop("src"));
         }
-
-        isPasteHandlerEnabled = false;
     }
 
     function textHandler(content) {
+        /// <summary>Handles text adding to the container.</summary>
         content = content.replace(/<br>/gi, "\r\n");
         content = content.replace(/(<([^>]+)>)/ig, "")
         $("div.main form #Content").empty()
@@ -54,6 +54,7 @@ $(document).ready(function () {
     }
 
     function imageHandler(content) {
+        /// <summary>Handles image adding to the container.</summary>
         $("div.main form #Content").empty()
                                    .prop("contenteditable", "false")
                                    .append("<img src='" + content + "' />");
@@ -69,6 +70,9 @@ $(document).ready(function () {
         if (isText) {
             // Only text is inserted
             content = $("div.main form #Content textarea").text();
+            if (content == "") {
+                content = $("div.main form #Content").text();
+            }
         } else {
             // Image is inserted
             content = $("div.main form #Content").html();
