@@ -107,7 +107,7 @@ $(document).ready(function () {
             }
 
             if (isText) {
-                main.append("<pre><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
+                main.append("<pre id='Content'><code class='prettyprint linenums'>" + $('<div/>').text(content).html() + "</code></pre>");
             } else {
                 main.append("<div id='Content'>" + content + "</div>");
             }
