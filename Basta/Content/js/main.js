@@ -91,7 +91,7 @@ $(document).ready(function () {
             { "Content": content },
             function (pastie) {
                 id = pastie.Id;
-                $("div.main h1").text("#" + pastie.Id + "");
+                $("div.main h1").html("Saved to: <a href='" + window.location + id + "'>" + window.location + id + "</a>");
             },
             "json"
         )
