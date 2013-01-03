@@ -49,11 +49,7 @@ namespace Basta
 
             host.AddServiceEndpoint(typeof(NancyWcfGenericService), binding, "");
             host.Open();
-
-            BasicHttpBinding httpBinding = new BasicHttpBinding();
-            httpBinding.MaxReceivedMessageSize = 2147483647;
-            httpBinding.MaxBufferSize = 2147483647;
-
+            
             return host;
         }
     }
