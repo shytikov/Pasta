@@ -209,6 +209,11 @@ body pre,
             box-shadow: 0 5px 10px #aaa;
 }
 
+pre#Content
+{
+    height: auto;
+}
+
 body textarea 
 {
     padding: 0px;
