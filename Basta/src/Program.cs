@@ -40,8 +40,8 @@ namespace Basta
                 BaseUri);
 
             var binding = new WebHttpBinding();
-            binding.MaxReceivedMessageSize = 2147483647;
-            binding.MaxBufferSize = 2147483647;
+            binding.MaxReceivedMessageSize = 2097152;
+            binding.MaxBufferSize = 2097152;
 
             host.AddServiceEndpoint(typeof(NancyWcfGenericService), binding, BaseUri);
             host.Open();
