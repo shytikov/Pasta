@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using System.Text;
+using System.ServiceProcess;
 using Nancy;
 using Nancy.Hosting.Wcf;
 
 namespace Basta
 {
-    class Program
+    class Program : ServiceBase
     {
-        // TODO: move address setting to app.config
-
         protected static Uri BaseUri
         {
             get
