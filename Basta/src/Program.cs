@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Diagnostics;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.ServiceProcess;
@@ -17,63 +18,69 @@ namespace Basta
 
         static void Main(string[] args)
         {
-            using (CreateAndOpenWebServiceHost())
-            {
-                using (Storage.Data)
-                {
-                    Console.WriteLine("Service {0} is now running on: {1}", ConfigurationManager.AppSettings["name"], BaseUri);
-                    Console.ReadLine();
-                }
-            }
+            ServiceBase.Run(new Program());
         }
 
         protected override void OnStart(string[] args)
         {
             base.OnStart(args);
 
-            using (CreateAndOpenWebServiceHost())
+            if (ServiceHost != null)
             {
-                using (Storage.Data)
-                {
-                    Console.WriteLine("Service {0} is now running on: {1}", BaseUri);
-                }
+                ServiceHost.Close();
             }
 
-            //TODO: place your start code here
+            ServiceUri = CreateServiceUri();
+            ServiceHost = CreateServiceHost(ServiceUri);
         }
 
         protected override void OnStop()
         {
             base.OnStop();
 
-            //TODO: clean up any variables and stop any threads
-        }
-
-        #region Private members
-        private static Uri BaseUri
-        {
-            get
+            if (ServiceHost != null)
             {
-                return new Uri(
-                    String.Format("http://{0}:{1}/",
-                    ConfigurationManager.AppSettings["host"],
-                    ConfigurationManager.AppSettings["port"]));
+                ServiceHost.Close();
+                ServiceHost = null;
             }
         }
 
-        private static WebServiceHost CreateAndOpenWebServiceHost()
+        #region Public members
+        public Uri ServiceUri
+        {
+            get;
+            private set;
+        }
+
+        public WebServiceHost ServiceHost
+        {
+            get;
+            private set;
+        }
+        #endregion
+
+        #region Private members
+        private static Uri CreateServiceUri()
+        {
+            return new Uri(
+                String.Format("http://{0}:{1}/",
+                ConfigurationManager.AppSettings["host"],
+                ConfigurationManager.AppSettings["port"]));
+        }
+
+        private static WebServiceHost CreateServiceHost(Uri uri)
         {
             var host = new WebServiceHost(
                 new NancyWcfGenericService(new DefaultNancyBootstrapper()),
-                BaseUri);
+                uri);
 
             var binding = new WebHttpBinding();
             binding.MaxReceivedMessageSize = 2097152;
             binding.MaxBufferSize = 2097152;
 
-            host.AddServiceEndpoint(typeof(NancyWcfGenericService), binding, BaseUri);
+            host.AddServiceEndpoint(typeof(NancyWcfGenericService), binding, uri);
             host.Open();
-            
+
             return host;
         }
         #endregion
