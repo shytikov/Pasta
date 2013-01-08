@@ -10,16 +10,43 @@ namespace Basta
 {
     class Program : ServiceBase
     {
+        public Program()
+        {
+            this.ServiceName = ConfigurationManager.AppSettings["name"];
+        }
+
         static void Main(string[] args)
         {
             using (CreateAndOpenWebServiceHost())
             {
                 using (Storage.Data)
                 {
-                    Console.WriteLine("Service is now running on: {0}", BaseUri);
+                    Console.WriteLine("Service {0} is now running on: {1}", ConfigurationManager.AppSettings["name"], BaseUri);
                     Console.ReadLine();
                 }
             }
+        }
+
+        protected override void OnStart(string[] args)
+        {
+            base.OnStart(args);
+
+            using (CreateAndOpenWebServiceHost())
+            {
+                using (Storage.Data)
+                {
+                    Console.WriteLine("Service {0} is now running on: {1}", BaseUri);
+                }
+            }
+
+            //TODO: place your start code here
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+
+            //TODO: clean up any variables and stop any threads
         }
 
         #region Private members
