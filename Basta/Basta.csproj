@@ -50,17 +50,17 @@
       <HintPath>..\packages\ManagedEsent.1.6\lib\net20\Esent.Interop.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Nancy, Version=0.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Nancy, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Nancy.0.14.1\lib\net40\Nancy.dll</HintPath>
+      <HintPath>..\packages\Nancy.0.15.0\lib\net40\Nancy.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.Hosting.Wcf, Version=0.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Nancy.Hosting.Wcf, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Nancy.Hosting.Wcf.0.14.1\lib\net40\Nancy.Hosting.Wcf.dll</HintPath>
+      <HintPath>..\packages\Nancy.Hosting.Wcf.0.15.0\lib\net40\Nancy.Hosting.Wcf.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.ViewEngines.DotLiquid, Version=0.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Nancy.ViewEngines.DotLiquid, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Nancy.Viewengines.DotLiquid.0.14.1\lib\net40\Nancy.ViewEngines.DotLiquid.dll</HintPath>
+      <HintPath>..\packages\Nancy.Viewengines.DotLiquid.0.15.0\lib\net40\Nancy.ViewEngines.DotLiquid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
